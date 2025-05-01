@@ -12,7 +12,7 @@ df<-read.csv("~/AD_signature_predictions/Data/gene_region_data.csv", stringsAsFa
 common_genes_4<-create_binaryMtx(df, min_regions=4)
 
 #Generate UpSet plot showing number of genes shared across regions
-upset_plotupset(common_genes_4, nsets=ncol(common_genes_4), 
+upset_plot<-upset(common_genes_4, nsets=ncol(common_genes_4), 
       sets=colnames(common_genes_4), 
       order.by="freq", 
       sets.x.label="Brain Regions", 
